@@ -1,0 +1,15 @@
+.main {
+  background-color: black;
+  color: white;
+  height: 45px;
+}
+.headerUnder {
+  display: flex;
+}
+.logo {
+  flex-grow: 1;
+  padding: 10px 0px;
+}
+.logo img {
+  width: 45px;
+}
