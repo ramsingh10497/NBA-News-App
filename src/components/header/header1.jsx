@@ -70,10 +70,12 @@ const useStyles = makeStyles((theme) => ({
     },
    drawer: {
     width: drawerWidth,
-    flexShrink: 0,
+     flexShrink: 0,
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: 'black',
+    color: 'white'
   },
   drawerHeader: {
     display: 'flex',
@@ -83,6 +85,11 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
   },
+  clrblk: {
+    color: 'white',
+    // backgroundColor: 'white',
+  }
+
 }));
 
 export default function Header1({open,handleDrawerOpen,handleDrawerClose}) {
@@ -128,7 +135,7 @@ export default function Header1({open,handleDrawerOpen,handleDrawerClose}) {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
-        position="fixed"
+        position="static"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
@@ -155,18 +162,17 @@ export default function Header1({open,handleDrawerOpen,handleDrawerClose}) {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
+        <div className={classes.drawerHeader} >
+          <IconButton onClick={handleDrawerClose} className={classes.clrblk}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
         <Divider />
        <List>
-          {items.map((temp, index) => (
-                   <ListItem button key={index}> 
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-                        <ListItemText primary={temp}></ListItemText> 
-                  {/* <Link to={text.link} >{text}</Link> */}
+          {items && items.map((temp, index) => (
+                   <ListItem button key={index} component={Link} to={temp.link} > 
+              <ListItemIcon className={classes.clrblk}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> 
+              <ListItemText primary={temp.text}/>
             </ListItem> 
           ))}
         </List>

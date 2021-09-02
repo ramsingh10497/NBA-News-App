@@ -1,5 +1,7 @@
 import React from 'react'
+import Footer from '../../components/footer/Footer';
 import Header1 from '../../components/header/header1'
+import Routes from '../../Routes';
 import './Layout.css'
 
 
@@ -18,8 +20,8 @@ function Layout({ children }) {
     return (
         <div>
             <Header1 open={open} handleDrawerClose={handleDrawerClose}  handleDrawerOpen={handleDrawerOpen}/>
-            {children}
-            Footer
+            <Routes />
+            <Footer />
         </div>
     )
 }
