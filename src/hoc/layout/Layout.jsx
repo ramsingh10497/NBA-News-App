@@ -20,8 +20,8 @@ function Layout({ children }) {
     return (
         <div>
             <Header1 open={open} handleDrawerClose={handleDrawerClose}  handleDrawerOpen={handleDrawerOpen}/>
-            <Routes />
-            <Footer />
+        <Routes open={open}/>
+            {/* <Footer /> */}
         </div>
     )
 }

@@ -6,7 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -19,11 +19,11 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import HomeIcon from '@material-ui/icons/Home';
-import DescriptionIcon from '@material-ui/icons/Description';
-import OndemandVideoIcon from '@material-ui/icons/OndemandVideo';
-import LockOpenIcon from '@material-ui/icons/LockOpen';
-import LockIcon from '@material-ui/icons/Lock';
+// import HomeIcon from '@material-ui/icons/Home';
+// import DescriptionIcon from '@material-ui/icons/Description';
+// import OndemandVideoIcon from '@material-ui/icons/OndemandVideo';
+// import LockOpenIcon from '@material-ui/icons/LockOpen';
+// import LockIcon from '@material-ui/icons/Lock';
 
 const drawerWidth = 240;
 
@@ -52,22 +52,7 @@ const useStyles = makeStyles((theme) => ({
   hide: {
     display: 'none',
   },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-    },
+  
    drawer: {
     width: drawerWidth,
      flexShrink: 0,
@@ -153,6 +138,7 @@ export default function Header1({open,handleDrawerOpen,handleDrawerClose}) {
           {logo()}
         </Toolbar>
       </AppBar>
+     <CssBaseline />
      <Drawer
         className={classes.drawer}
         variant="persistent"

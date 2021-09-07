@@ -1,11 +1,12 @@
 import { Box, Typography } from '@material-ui/core'
 import React from 'react'
-import Sliderfirst from '../widget/newsSlider/Slider'
+import SliderFirst from '../widget/SliderFirst'
 
 function Home() {
+   
     return (
         <div>
-            <Sliderfirst />
+            <SliderFirst />
         </div>
     )
 }
