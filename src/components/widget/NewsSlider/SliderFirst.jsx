@@ -10,7 +10,6 @@ const SliderFirst = ({type,start,end}) => {
         axios.get(`http://localhost:8000/articles?_start=${start}&_end=${end}`)
         .then((res)=> setNews(res.data))
     }, [])
-    console.log(news);
     return (
         <div>
            <SliderTemplate data={news} type={type} />
