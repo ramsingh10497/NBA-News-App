@@ -2,6 +2,8 @@ import { Box, Button } from '@material-ui/core';
 import axios from 'axios';
 import React from 'react';
 import {Link} from 'react-router-dom'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import styles from './NewsLists.css'
 
 
 const NewsLists = ({start,end,type}) => {
@@ -24,11 +26,20 @@ const NewsLists = ({start,end,type}) => {
         switch (type) {
             case ("lists"):
                 template = items && items.map((item) => (
-                    <div key={item.id} style={{background:"white",padding:"8px",margin:"8px 5px 0 5px",}}>
-                        <Box style={{textDecoration:'none'}} component={Link} to={`/articles/${item.id}`}>
+                    <CSSTransition
+                        key={item.id}
+                        classNames={{
+                            enter: styles.wrapper,
+                            enterActive: styles.wrapper_enter
+                        }}
+                        timeout={500}
+                    >
+                        <div  style={{background:"white",padding:"8px",margin:"8px 5px 0 5px",}}>
+                        <   Box style={{textDecoration:'none'}} component={Link} to={`/articles/${item.id}`}>
                             <h2 style={{color:"black"}}>{item.title}</h2>
-                        </Box>
-                    </div>
+                            </Box>
+                        </div>
+                    </CSSTransition>
                 ))
                 break;
             default:
@@ -40,12 +51,17 @@ const NewsLists = ({start,end,type}) => {
 
     return (
         <div>
-            {newsRender(type)}
-            <Button
+            <TransitionGroup
+                component="div"
+                className="list"
+            >
+                {newsRender(type)}
+            </TransitionGroup>
+           <Button
                 style={{ width: '100%', color: 'White', backgroundColor: 'blue', fontWeight: 'bold' }}
                 onClick={() => request(start,num+2)}
             >
-                Load More
+                Load More News
             </Button>
         </div>
     )

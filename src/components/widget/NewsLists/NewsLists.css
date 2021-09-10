@@ -1,0 +1,17 @@
+.divfirst {
+  background-color: white;
+  padding: 8px;
+  margin: 8px 5px 0 5px;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in;
+}
+
+.wrapper_enter {
+  opacity: 1;
+  transform: translateX(0);
+}
