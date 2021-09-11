@@ -23,7 +23,7 @@ const SliderTemplate = ({data,type}) => {
                     <div key={i}>
                         <div className={styles.items}>
                             <div className={styles.images}
-                                style={{ background:`url(../images/articles/${item.image}`}}
+                                style={{ background:`url(../images/articles/${item.image}`, height:'400px'}}
                             ></div>
                             <Link to={`/articles/${item.id}`}>
                                 <div className={styles.caption}>
