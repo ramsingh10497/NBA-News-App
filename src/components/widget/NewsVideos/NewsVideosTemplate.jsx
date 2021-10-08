@@ -1,10 +1,11 @@
 import { Box } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom';
+import CardInfo from '../NewsLists/CardInfo';
 import styles from './NewsVideos.module.css';
 
 const NewsVideosTemplate = ({ videos, teams }) => {
-    let video = videos[0]
+    let video = videos;
     return (
         <div>
             {video && video.map((item, i) => {
@@ -21,6 +22,7 @@ const NewsVideosTemplate = ({ videos, teams }) => {
                                 ></div>
                             </div>
                             <div className={styles.right}>
+                                <CardInfo teams={teams} team={item.team} date={item.date} />
                                 <h3>{item.title}</h3>
                             </div>
                         </div>

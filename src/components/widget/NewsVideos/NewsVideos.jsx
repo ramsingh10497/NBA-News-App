@@ -18,7 +18,7 @@ const NewsVideos = ({start,type,amount}) => {
         .then(res => setTeams(res.data))
         }
         axios.get(`http://localhost:8000/videos?_start=${start}&_end=${end}`)
-            .then(res => setVideos([...videos, res.data]))
+            .then(res => setVideos([...videos, ...res.data]))
         // console.log(videos);
     }
 
@@ -51,8 +51,13 @@ const NewsVideos = ({start,type,amount}) => {
 
 
 
-            <Box component={Link} to="/articles">
+            <Box component="div" >
                 <Button
+                    onClick={() => {
+                        request(end, end+ amount);
+                        setEnd(end + amount);
+                        
+                        }}
                 style={{ width: '100%', color: 'White', backgroundColor: 'blue', fontWeight: 'bold' }}
             >
                 Load More Videos
