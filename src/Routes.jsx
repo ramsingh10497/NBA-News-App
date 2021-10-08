@@ -7,6 +7,7 @@ import SignOut from './components/Signout/SignOut'
 import Videos from './components/Videos/Videos';
 import classnames from 'classnames';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import NewsArticles from './components/Articles/News/Post/NewsArticles'
 // import Layout from './hoc/layout/Layout'
 
 
@@ -40,6 +41,7 @@ function Routes({ open }) {
                 <Route path="/" exact component={Home} />
                 <Route path="/Home" exact component={Home} />
                 <Route path="/News" exact component={News} />
+                <Route path="/articles/:id" component={NewsArticles} />
                 <Route path="/Videos" exact component={Videos} />
                 <Route path="/SignIn" exact component={SignIn} />
                 <Route path="/SignOut" exact component={SignOut} />
