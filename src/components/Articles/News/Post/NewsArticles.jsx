@@ -39,7 +39,7 @@ const NewsArticles = (props) => {
                 date={articles.date}
                 author={articles.author}
             />
-            <Body />
+            <Body tempo="OnlyforCommit" />
         </div>
     )
 }
